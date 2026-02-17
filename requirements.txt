@@ -1,0 +1,23 @@
+# Herramientas principales
+fastapi                         # Framework web
+uvicorn                         # Servidor web
+
+# Herramientas de desarrollo
+#pytest                          # Testing
+#httpx                           # Cliente HTTP asincrónico
+#ruff                            # Linter y formateador de código
+
+# Herramientas de seguridad
+python-multipart                # Manejo de formularios
+python-jose[cryptography]       # Manejo de tokens
+passlib[bcrypt]                 # Encriptacion de contraseñas
+bcrypt==3.2.2                   # Backend de encriptacion para passlib (pinned for passlib compatibility)
+python-dotenv                   # Manejo de variables de entorno
+
+# Herramientas de base de datos
+sqlalchemy                      # ORM
+asyncpg                         # Driver de PostgreSQL
+
+# Herramientas de validacion
+pydantic[email]                 # Validacion de datos
+email-validator                 # Validacion de correos
