@@ -64,13 +64,9 @@ async def get_user_by_email(
 
 @router.post("/", response_model=ResponseUserSchemas, status_code=201)
 async def create_user(
-    user: RequestUserSchemas,
-    user_service: UserService = Depends(get_user_service),
-    current_user: ResponseUserSchemas = Depends(get_current_user),
+    user: RequestUserSchemas, user_service: UserService = Depends(get_user_service)
 ):
     """Create a new user"""
-    if current_user.is_active:
-        raise HTTPException(status_code=403, detail="Forbidden")
     try:
         return await user_service.create(user)
     except ValueError as e:

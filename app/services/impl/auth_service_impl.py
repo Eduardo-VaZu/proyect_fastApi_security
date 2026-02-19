@@ -40,7 +40,11 @@ class AuthServiceImpl(AuthService):
         )
 
         access_token = create_access_token(
-            data={"sub": user.email, "username": user.username},
+            data={
+                "sub": user.email,
+                "username": user.username,
+                "is_active": user.is_active,
+            },
             expires_delta=access_token_expires,
         )
 
